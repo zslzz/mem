@@ -1,6 +1,5 @@
 <template>
-<div>Pie Chart</div>
-  <v-chart class="chart" :option="option" />
+  <div><v-chart class="chart" :option="option" /></div>
 </template>
 
 <script>
@@ -29,12 +28,15 @@ export default defineComponent({
     VChart
   },
   provide: {
-    [THEME_KEY]: "dark"
+    [THEME_KEY]: "white"
+  },
+  methods:{
+
   },
   setup() {
     const option = ref({
       title: {
-        text: "Traffic Sources",
+        text: "预算分析(万元)",
         left: "center"
       },
       tooltip: {
@@ -44,7 +46,7 @@ export default defineComponent({
       legend: {
         orient: "vertical",
         left: "left",
-        data: ["Direct", "Email", "Ad Networks", "Video Ads", "Search Engines"]
+        data: ["预处理系统", "厌氧发酵系统", "污泥脱水系统", "污水处理系统", "沼气收集及处理系统","除臭系统","沼渣处理系统"]
       },
       series: [
         {
@@ -53,11 +55,13 @@ export default defineComponent({
           radius: "55%",
           center: ["50%", "60%"],
           data: [
-            { value: 335, name: "Direct" },
-            { value: 310, name: "Email" },
-            { value: 234, name: "Ad Networks" },
-            { value: 135, name: "Video Ads" },
-            { value: 1548, name: "Search Engines" }
+            { value: 701.75, name: "预处理系统" },
+            { value: 360, name: "厌氧发酵系统" },
+            { value: 90, name: "污泥脱水系统" },
+            { value: 0, name: "污水处理系统" },
+            { value: 182, name: "沼气收集及处理系统" },
+            { value: 235, name: "除臭系统" },
+            //{ value: 1548, name: "沼渣处理系统" }
           ],
           emphasis: {
             itemStyle: {

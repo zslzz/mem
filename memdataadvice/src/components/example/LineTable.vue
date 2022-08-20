@@ -1,8 +1,9 @@
 <template>
-    <div>lineTable</div>
-    <div id="lineTable"></div>
+    <div>各个系统处理能力水平(/t)</div>
+    <v-chart class="lineChart" :option="barOption" />
+        <div>处理速度预估(/d)</div>
+    <!-- <div id="lineTable"></div> -->
     <v-chart class="chart" :option="option" />
-    <v-chart class="chart" :option="barOption" />
 </template>
 
 <script>
@@ -29,23 +30,23 @@ export default defineComponent({
         VChart
     },
     provide: {
-        [THEME_KEY]: "dark"
+        [THEME_KEY]: "white"
     },
     setup() {
         const option = ref({
             xAxis: {
-                data: ["4-3", "4-4", "4-5", "4-6", "4-7", "4-8", "4-9"]
+                data: ["第1天", "第2天", "第3天", "第4天", "第5天", "第6天", "第7天"]
             },
             yAxis: {},
             series: [
                 {
                     name: "用户量",
                     type: "line",
-                    data: [8, 15, 31, 13,],
+                    data: [20, 25, 28, 30,],
                     itemStyle: {
                         normal: {
                             lineStyle: {
-                                width: 5
+                                width: 1
                             }
                         }
                     },
@@ -53,11 +54,11 @@ export default defineComponent({
                 {
                     name: "用户量",
                     type: "line",
-                    data: [null, null, null, 13, 15, 22, 11],
+                    data: [null, null, null, 30, 32, 33, 34],
                     itemStyle: {
                         normal: {
                             lineStyle: {
-                                width: 5,
+                                width: 1,
                                 type: 'dotted'
                             }
                         }
@@ -69,12 +70,12 @@ export default defineComponent({
                         data: [
                             {
                                 name: 'max',
-                                yAxis: 18,
+                                yAxis: 33,
                                 symbol: '',
                                 lineStyle: { 
                                     normal: {
                                         color: 'red',
-                                        width: 5, // 线宽
+                                        width: 1, // 线宽
                                         type: 'dashed'
                                     }
                                 },
@@ -93,12 +94,12 @@ export default defineComponent({
         });
         const barOption = ref({
             xAxis: {
-                data: ["4-3", "4-4", "4-5", "4-6", "4-7", "4-8", "4-9"]
+                data: ["预处理系统", "厌氧发酵系统", "污泥脱水系统", "污水处理系统", "沼气收集及处理系统", "除臭系统", "沼渣处理系统"]
             },
             yAxis: {},
             series: [
                 {
-                    name: "用户量",
+                    name: "处理能力",
                     type: "bar",
                     data: [8, 15, 31, 13, 15, 22, 11]
                 }
@@ -113,6 +114,10 @@ export default defineComponent({
 .chart {
     height: 30vh;
     width: 100vh;
+}
+.lineChart {
+    height: 30vh;
+    width: 150vh;
 }
 
 body {
