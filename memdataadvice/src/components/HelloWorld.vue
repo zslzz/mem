@@ -6,7 +6,6 @@
     <p>
       <b>配置总得分：80/100</b>
     </p>
-    <el-button type="primary">el-button</el-button>
   </div>
 </template>
 <script>

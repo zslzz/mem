@@ -50,7 +50,7 @@ export default defineComponent({
       },
       series: [
         {
-          name: "Traffic Sources",
+          name: "各系统预算",
           type: "pie",
           radius: "55%",
           center: ["50%", "60%"],

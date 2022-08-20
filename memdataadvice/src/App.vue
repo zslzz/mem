@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-button type="primary" @click="choose(1)">傻瓜模式</el-button>
-    <el-button type="primary" @click="choose(0)">选择模式</el-button>
+    <el-button type="primary" @click="choose(1)">简易模式</el-button>
+    <el-button type="primary" @click="choose(0)">重新选择模式</el-button>
     <el-button type="primary" @click="choose(2)">专家模式</el-button>
   </div>
   <HelloWorld v-if="isShow"></HelloWorld>
