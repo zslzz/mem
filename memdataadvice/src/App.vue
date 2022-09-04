@@ -1,72 +1,56 @@
-<template>
-  <div>
-    <el-button type="primary" @click="choose(1)">简易模式</el-button>
-    <el-button type="primary" @click="choose(0)">重新选择模式</el-button>
-    <el-button type="primary" @click="choose(2)">专家模式</el-button>
-  </div>
-  <HelloWorld v-if="isShow"></HelloWorld>
-</template>
-
-<script>
-//import HelloWorld from './components/HelloWorld.vue'
-// import PieChart from './components/example/PieChart.vue'
-// import LineTable from './components/example/LineTable.vue'
-// import ResultTable from './components/mem/ResultTable.vue'
-import HelloWorld from './components/HelloWorld.vue'
-// import ResultTable from './components/mem/ResultTable.vue'
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+<script lang="ts" setup>
+  import { VueFlow, MiniMap, Controls, Background, isNode, useVueFlow, Elements, MarkerType } from '@braks/vue-flow'
+  import {ref} from 'vue'
+  const elements = ref<Elements>([
+    { id: '1', type: 'input', label: 'Node 1', position: { x: 250, y: 5 } },
+    { id: '2', type: 'output', label: 'Node 2', position: { x: 100, y: 100 } },
+    { id: '3', label: 'Node 3', position: { x: 400, y: 100 } },
+    { id: '4', label: 'Node 4', position: { x: 150, y: 200 } },
+    { id: '5', type: 'output', label: 'Node 5', position: { x: 300, y: 300 } },
+    { id: 'e1-2', source: '1', target: '2', animated: true },
+    { id: 'e1-3', label: 'edge with arrowhead', source: '1', target: '3', markerEnd: MarkerType.Arrow },
+    { 
+      id: 'e4-5', 
+      type: 'step', 
+      label: 'step-edge', 
+      source: '4', 
+      target: '5', 
+      style: { stroke: 'orange' }, 
+      labelBgStyle: { fill: 'orange' } 
     },
-    methods:{
-      choose(index) {
-        if(index==1){
-          alert("已生成傻瓜"+"模式");
-        }else if(index==2){
-          alert("已生成专家"+"模式");
-        }else{
-          alert("请重新选择"+"模式");
+    { id: 'e3-4', type: 'smoothstep', label: 'smoothstep-edge', source: '3', target: '4' },
+  ])
+  const { onPaneReady, onNodeDragStop, onConnect, instance, addEdges, store, getNodes, nodes } = useVueFlow()
+  onPaneReady(({ fitView }) => {
+    fitView()
+  })
+  onNodeDragStop((e) => console.log('drag stop', e))
+  onConnect((params) => addEdges([params]))
+   
+  const updatePos = () =>
+    elements.value.forEach((el) => {
+      if (isNode(el)) {
+        el.position = {
+          x: Math.random() * 400,
+          y: Math.random() * 400,
         }
-        if(index>0){
-              this.isShow=true
-        }else{
-          this.isShow=false
-        }
-}
-    },
-  data() {
-    return {
-            isShow:false,
-      tableData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1517 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1516 弄'
-      }]
-    }
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+      }
+    })
+  
+  const logToObject = () => console.log(instance.value?.toObject())
+  const resetTransform = () => instance.value?.setTransform({ x: 0, y: 0, zoom: 1 })
+  const toggleclass = () => elements.value.forEach((el) => (el.class = el.class === 'light' ? 'dark' : 'light'))
+  </script>
+  <template>
+    <VueFlow v-model="elements" class="vue-flow-basic-example" :default-zoom="1.5" :min-zoom="0.2" :max-zoom="4">
+      <Background pattern-color="#aaa" gap="8" />
+      <MiniMap />
+      <Controls />
+      <div style="position: absolute; right: 10px; top: 10px; z-index: 4">
+        <button style="margin-right: 5px" @click="resetTransform">reset transform</button>
+        <button style="margin-right: 5px" @click="updatePos">change pos</button>
+        <button style="margin-right: 5px" @click="toggleclass">toggle class</button>
+        <button @click="logToObject">toObject</button>
+      </div>
+    </VueFlow>
+  </template>

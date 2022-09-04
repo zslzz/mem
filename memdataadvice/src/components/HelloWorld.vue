@@ -1,4 +1,6 @@
 <template>
+  <VueFlow>...</VueFlow>
+  <WorkFlowTable></WorkFlowTable>
   <ResultTable></ResultTable>
   <LineTable></LineTable>
   <PieChart></PieChart>
@@ -12,12 +14,16 @@
 import PieChart from './example/PieChart.vue'
 import LineTable from './example/LineTable.vue'
 import ResultTable from './mem/ResultTable.vue'
+import WorkFlowTable from './mem/WorkFlowTable.vue'
+import VueFlow from './mem/VueFlow.vue'
 export default {
   name: 'HelloWorld',
   components: {
     PieChart,
     LineTable,
     ResultTable,
+    WorkFlowTable,
+    VueFlow
 },
   props: {
     msg: String
