@@ -14,7 +14,7 @@ export default {
       password: [{ required: true, message: "不能为空", trigger: "blur" }],
     }
     let formData = reactive({
-      loginName: "admin",
+      loginName: "expert",
       password: "123456",
     });
 

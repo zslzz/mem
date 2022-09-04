@@ -18,12 +18,38 @@ export const menuList1 = [
         title: "系统首页",
     },
     {
+        id: "M0020",
+        icon: "md-git-compare",
+        path: "/bpmn",
+        name: "DemoBpmn",
+        componentPath: "bpmn.vue",
+        title: "系统介绍",
+    },
+    {
         id: "M0002",
         icon: "md-grid",
-        path: "/table",
-        name: "DemoTable",
-        componentPath: "table.vue",
-        title: "基础表格",
+        //path: "/table",
+        //name: "DemoTable",
+        //componentPath: "table.vue",
+        title: "设备报告",
+        children: [
+            {
+                id: "M0005",
+                icon: "md-grid",
+                path: "/table",
+                name: "报告1",
+                componentPath: "table.vue",
+                title: "设备报告1",
+            },
+            {
+                id: "M0005",
+                icon: "md-grid",
+                path: "/deviceselector",
+                name: "deviceselector",
+                componentPath: "deviceselector.vue",
+                title: "result1",
+            },
+        ],
     },
     {
         id: "M0003",
@@ -36,34 +62,21 @@ export const menuList1 = [
     {
         id: "M0004",
         icon: "ios-list-box",
-        title: "表单相关",
+        title: "设备信息导入",
         children: [
             {
                 id: "M0005",
                 path: "/form",
                 name: "DemoForm",
                 componentPath: "form.vue",
-                title: "基本表单",
+                title: "手动输入",
             },
             {
                 id: "M0006",
                 path: "/upload",
                 name: "DemoUpload",
                 componentPath: "upload.vue",
-                title: "文件上传",
-            },
-            {
-                id: "M0007",
-                title: "三级菜单",
-                children: [
-                    {
-                        id: "M0008",
-                        path: "/editor",
-                        name: "DemoEditor",
-                        componentPath: "editor.vue",
-                        title: "富文本编辑器",
-                    },
-                ],
+                title: "文件导入",
             },
             {
                 id: "M0025",
@@ -97,14 +110,6 @@ export const menuList1 = [
         name: "DemoEharts",
         componentPath: "charts.vue",
         title: "echarts图表",
-    },
-    {
-        id: "M0020",
-        icon: "md-git-compare",
-        path: "/bpmn",
-        name: "DemoBpmn",
-        componentPath: "bpmn.vue",
-        title: "流程图",
     },
     {
         id: "M0011",
@@ -145,11 +150,11 @@ export const menuList1 = [
     },
     {
         id: "M0015",
-        icon: "md-thumbs-up",
-        path: "/donate",
-        name: "DemoDonate",
+        icon: "md-body",
+        path: "/contactus",
+        name: "ContactUs",
         componentPath: "donate.vue",
-        title: "支持作者",
+        title: "联系我们",
     },
 ];
 
@@ -185,10 +190,10 @@ export const menuList2 = [
     },
     {
         id: "M0015",
-        icon: "md-thumbs-up",
+        icon: "md-body",
         path: "/donate",
         name: "DemoDonate",
         componentPath: "donate.vue",
-        title: "支持作者",
+        title: "联系我们",
     },
 ];

@@ -1,6 +1,6 @@
 <style lang="less" scoped>
 .vue-flow-content {
-  height: 400px;
+  height: 800px;
   :deep(.node-light) {
     background: none;
   }
@@ -12,16 +12,16 @@
 <template>
   <div>
     <Row v-margin="5">
-      更多查看：<a href="https://vueflow.dev/">Vue Flow官方文档</a>
+      <!-- 更多查看：<a href="https://vueflow.dev/">Vue Flow官方文档</a> -->
     </Row>
-    <Row v-margin="5" justify="end">
+    <!-- <Row v-margin="5" justify="end">
       <Space wrap>
         <Button type="info" @click="resetTransform">重置</Button>
         <Button type="info" @click="updatePos">修改属性</Button>
         <Button type="info" @click="toggleclass">修改样式</Button>
         <Button type="info" @click="logToObject">查看属性</Button>
       </Space>
-    </Row>
+    </Row> -->
     <VueFlow v-model="elements" class="vue-flow-content">
       <Background />
       <MiniMap />
@@ -44,12 +44,25 @@ export default {
   setup() {
 
     const elementsDefault = [
-      { id: '1', type: 'input', label: 'Node 1', position: { x: 250, y: 5 }, class: 'node-light' },
-      { id: '2', label: 'Node 2', position: { x: 100, y: 100 }, class: 'node-light' },
-      { id: '3', label: 'Node 3', position: { x: 400, y: 100 }, class: 'node-light' },
-      { id: '4', label: 'Node 4', position: { x: 400, y: 200 }, class: 'node-light' },
+      { id: '1', type: 'input', label: '厨余收集系统', position: { x: 250, y: 0 }, class: 'node-light' },
+      { id: '2', label: '预处理系统', position: { x: 250, y: 80 }, class: 'node-light' },
+      { id: '3', label: '厌氧发酵系统', position: { x: 250, y: 160 }, class: 'node-light' },
+      { id: '4', label: '沼气处理系统', position: { x: 250, y: 240 }, class: 'node-light' },
+      { id: '5', label: '污水处理系统', position: { x: 250, y: 320 }, class: 'node-light' },
+      { id: '6', label: '油气锅炉', position: { x: 450, y: 150 }, class: 'node-light' },
+      { id: '7', label: '除臭系统系统', position: { x: 450, y: 250 }, class: 'node-light' },
+      { id: '8', label: '自控系统', position: { x: 450, y: 55 }, class: 'node-light' },
+      { id: '9', type: 'output',label: '焚烧厂', position: { x: 50, y: 200 }, class: 'node-light' },
       { id: 'e1-2', source: '1', target: '2', animated: true },
-      { id: 'e1-3', source: '1', target: '3' },
+      { id: 'e2-3', source: '2', target: '3', animated: true },
+      { id: 'e2-7', source: '2', target: '7', animated: true },
+      { id: 'e2-9', source: '2', target: '9', animated: true ,label: "粗渣"},
+      { id: 'e3-9', source: '3', target: '9', animated: true ,label: "沼渣"},
+      { id: 'e3-4', source: '3', target: '4', animated: true },
+      { id: 'e4-5', source: '4', target: '5', animated: true},
+      { id: 'e2-3', source: '2', target: '3', animated: true},
+      { id: 'e4-6', source: '4', target: '6', animated: true},
+      { id: 'e5-7', source: '5', target: '7', animated: true},
     ];
 
     const elements = ref<Elements>(elementsDefault);
