@@ -1,13 +1,9 @@
 # vue-sys-manager
 
 #### Description
-vue3 + typescript + view ui后台管理系统
+vue3 + typescript + view ui （system manage）
 
-演示地址：[http://106.12.116.166:8080](http://106.12.116.166:8080)
-
-githup地址：[https://github.com/huang-long/vue-sys-manage](https://github.com/huang-long/vue-sys-manage)
-
-![Image text](https://gitee.com/huanglgln/vue-sys-manage/raw/master/src/images/page.jpg)
+Demo address：[http://106.12.116.166:8080](http://106.12.116.166:8080)
 
 ## Project Setup
 
@@ -46,10 +42,10 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 npm run lint
 ```
 
-### 支持作者
+### Support author
 
 ![Image text](https://gitee.com/huanglgln/vue-sys-manage/raw/master/src/images/shoukuanma.png)
 
-### 欢迎讨论
+### Welcome to discuss
 
 huanglgln@163.com
