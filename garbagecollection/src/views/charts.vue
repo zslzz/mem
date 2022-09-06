@@ -31,7 +31,7 @@ export default {
           // 指定图表的配置项和数据
           let option = {
             title: {
-              text: "echarts 示例",
+              text: "城市分布",
               textStyle: {
                 fontSize: 16,
                 fontWeight: "normal",
@@ -55,13 +55,13 @@ export default {
               {
                 type: "category",
                 data: [
-                  "电力",
-                  "水泥",
-                  "煤炭",
-                  "化工",
-                  "电解",
-                  "机械",
-                  "橡胶",
+                  "北京",
+                  "天津",
+                  "郑州",
+                  "上海",
+                  "武汉",
+                  "石家庄",
+                  "南京",
                 ],
                 axisTick: {
                   alignWithLabel: true,
@@ -70,7 +70,7 @@ export default {
             ],
             yAxis: [
               {
-                name: "单位（度）",
+                name: "单位（套）",
                 nameTextStyle: {
                   align: "left",
                   verticalAlign: "top",
@@ -81,7 +81,7 @@ export default {
             ],
             series: [
               {
-                name: "吨",
+                name: "套",
                 type: "bar",
                 barWidth: "60%",
                 data: [10, 52, 200, 334, 390, 330, 220],
