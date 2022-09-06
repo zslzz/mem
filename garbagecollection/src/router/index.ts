@@ -13,7 +13,7 @@ addCacheRouter(router);
 // 路由拦截
 router.beforeEach((to, from, next) => {
   const token = sessionStorage.getItem('token');
-
+  console.log("token:"+token)
   if (token) {
     // 是否有该路径
     if (to.matched.length > 0) {

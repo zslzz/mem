@@ -31,37 +31,37 @@ export default {
 
     const messageBaseList = [
       {
-        icon: 'md-mail',
+        icon: 'md-information',
         iconColor: '#3391e5',
-        title: '蒂姆·库克回复了你的邮件',
+        title: '有新设备导入',
         read: 1,
         time: 1557297198
       },
       {
         icon: 'md-home',
         iconColor: '#87d068',
-        title: '乔纳森·伊夫邀请你参加会议',
+        title: '报告已打印成功',
         read: 0,
         time: 1557297198
       },
       {
-        icon: 'md-information',
+        icon: 'md-people',
         iconColor: '#fe5c57',
-        title: '斯蒂夫·沃兹尼亚克已批准了你的休假申请',
+        title: 'xxx浏览了xx报告',
         read: 1,
         time: 1557297198
       },
       {
         icon: 'md-star',
         iconColor: '#ff9900',
-        title: '史蒂夫·乔布斯收藏了你的文章',
+        title: '史蒂夫·乔布斯收藏了你的报告',
         read: 1,
         time: 1557297198
       },
       {
         icon: 'md-people',
         iconColor: '#f06292',
-        title: '比尔·费尔南德斯通过了你的好友申请',
+        title: '比尔·盖茨尝试联系您',
         read: 1,
         time: 1557297198
       }

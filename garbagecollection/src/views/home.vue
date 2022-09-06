@@ -7,16 +7,16 @@
       <Card style="width:100%">
         <template #title>
           <Icon type="ios-film-outline"></Icon>
-          Classic film
+          报告推荐
         </template>
         <template #extra>
           <a href="#" @click.prevent="changeLimit">
             <Icon type="ios-loop-strong"></Icon>
-            Change
+            换一换
           </a>
         </template>
         <p class="rate-demo" v-for="(item, index) in randomMovieList" :key="index">
-          <a :href="item.url" target="_blank">{{ item.name }}</a>
+          <router-link :to="item.url">{{ item.name }}</router-link>
           <span>
             <Rate disabled v-model="item.rate" />{{ item.rate }}
           </span>
@@ -28,10 +28,10 @@
       <Circle :size="250" :trail-width="4" :stroke-width="5" :percent="75" stroke-linecap="square"
         stroke-color="#43a3fb">
         <div class="demo-Circle-custom">
-          <h1>4,000</h1>
+          <h1>4,00</h1>
           <p>下载人数</p>
           <span>
-            占总人数
+            占总浏览人数
             <i>75%</i>
           </span>
         </div>
@@ -40,21 +40,21 @@
 
       <Col v-padding="20" :span="6">
       <Timeline>
-        <TimelineItem color="green">发布1.0版本</TimelineItem>
-        <TimelineItem color="green">发布2.0版本</TimelineItem>
-        <TimelineItem color="red">严重故障</TimelineItem>
-        <TimelineItem color="blue">发布3.0版本</TimelineItem>
-        <TimelineItem color="blue">发布4.0版本</TimelineItem>
-        <TimelineItem color="blue">发布5.0版本</TimelineItem>
+        <TimelineItem color="green">发布0.1版本</TimelineItem>
+        <TimelineItem color="green">发布0.2版本</TimelineItem>
+        <TimelineItem color="red">正式上线啦 1.0版本</TimelineItem>
+        <TimelineItem color="blue">100设备导入</TimelineItem>
+        <TimelineItem color="blue">10人浏览</TimelineItem>
+        <TimelineItem color="blue">10人下载</TimelineItem>
       </Timeline>
       </Col>
     </Row>
 
-    <Row>
+    <!-- <Row>
       <Col v-padding="20" :span="24">
       <Calendar :cell-height="50" />
       </Col>
-    </Row>
+    </Row> -->
 
   </div>
 </template>
@@ -71,53 +71,43 @@ export default {
   setup() {
     let movieList: Array<Movie> = [
       {
-        name: 'The Shawshank Redemption',
-        url: 'https://movie.douban.com/subject/1292052/',
+        name: '最佳性价比',
+        url: '/deviceReport1',
         rate: 9.6
       },
       {
-        name: 'Leon:The Professional',
-        url: 'https://movie.douban.com/subject/1295644/',
+        name: '最经济',
+        url: 'deviceReport2',
         rate: 9.4
       },
       {
-        name: 'Farewell to My Concubine',
-        url: 'https://movie.douban.com/subject/1291546/',
+        name: '最稳定',
+        url: 'deviceReport3',
         rate: 9.5
       },
       {
-        name: 'Forrest Gump',
-        url: 'https://movie.douban.com/subject/1292720/',
+        name: '最人气',
+        url: 'deviceReport1',
         rate: 9.4
       },
       {
-        name: 'Life Is Beautiful',
-        url: 'https://movie.douban.com/subject/1292063/',
+        name: '当前选择最多',
+        url: 'deviceReport1',
         rate: 9.5
       },
       {
-        name: 'Spirited Away',
-        url: 'https://movie.douban.com/subject/1291561/',
+        name: '查看最多',
+        url: 'deviceReport1',
         rate: 9.2
       },
       {
-        name: 'Schindler\'s List',
-        url: 'https://movie.douban.com/subject/1295124/',
+        name: '下载最多',
+        url: 'deviceReport1',
         rate: 9.4
       },
       {
-        name: 'The Legend of 1900',
-        url: 'https://movie.douban.com/subject/1292001/',
-        rate: 9.2
-      },
-      {
-        name: 'WALL·E',
-        url: 'https://movie.douban.com/subject/2131459/',
-        rate: 9.3
-      },
-      {
-        name: 'Inception',
-        url: 'https://movie.douban.com/subject/3541415/',
+        name: '历史最佳',
+        url: 'deviceReport1',
         rate: 9.2
       }
     ]

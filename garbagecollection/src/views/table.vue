@@ -9,17 +9,17 @@
 <template>
   <div>
 
-    <Form ref="form" :model="formInline" :rules="ruleInline" :label-width="50">
+    <Form ref="form" :model="formInline" :rules="ruleInline" :label-width="90">
       <Row>
-        <Col span="6">
-        <FormItem label="姓名" prop="name">
-          <Input type="text" v-model="formInline.name" placeholder="输入姓名"> </Input>
+        <Col span="5">
+        <FormItem label="预算(w)" prop="budget">
+          <Input type="text" v-model="formInline.budget" placeholder="700"> </Input>
         </FormItem>
         </Col>
 
-        <Col span="6">
-        <FormItem label="姓名" prop="age">
-          <Input type="text" v-model="formInline.age" placeholder="输入年龄"></Input>
+        <Col span="5">
+        <FormItem label="处理吨数(t)" prop="ability">
+          <Input type="text" v-model="formInline.ability" placeholder="50"></Input>
         </FormItem>
         </Col>
 
@@ -60,16 +60,16 @@ export default {
       align: 'center'
     },
     {
-      title: '姓名',
+      title: '报告名称',
       key: 'name'
     },
     {
-      title: '年龄',
-      key: 'age'
+      title: '处理量(t)',
+      key: 'ability'
     },
     {
-      title: '地址',
-      key: 'address'
+      title: '预算(w)',
+      key: 'budget'
     },
     {
       title: 'Action',
@@ -80,16 +80,16 @@ export default {
     let dataList = ref([...tableDataList]);
 
     let formInline = reactive({
-      name: '',
-      age: ''
+      ability: '',
+      budget: ''
     })
 
     const ruleInline = {
-      name: [
-        { message: '请输入用户名', trigger: 'blur' }
+      budget: [
+        { message: '请输入预算', trigger: 'blur' }
       ],
-      age: [
-        { message: '其输入年龄', trigger: 'blur' },
+      ability: [
+        { message: '请输入处理量', trigger: 'blur' },
         // { type: 'number', max: 3, message: '年龄必须是数字', trigger: 'blur' }
       ]
     }
@@ -103,10 +103,10 @@ export default {
     }
     const handleSearch = () => {
       dataList.value = tableDataList.filter((item) => {
-        if (formInline.name != '' && item.name != formInline.name) {
+        if (formInline.budget != '' && item.budget != Number(formInline.budget)) {
           return;
         }
-        if (formInline.age != '' && item.age != formInline.age) {
+        if (formInline.ability != '' && item.ability != Number(formInline.ability)) {
           return;
         }
         return item;
