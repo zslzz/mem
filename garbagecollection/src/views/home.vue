@@ -26,7 +26,7 @@
 
       <Col v-padding="20" :span="6">
       <Circle :size="250" :trail-width="4" :stroke-width="5" :percent="75" stroke-linecap="square"
-        stroke-color="#43a3fb">
+        stroke-color="green">
         <div class="demo-Circle-custom">
           <h1>4,00</h1>
           <p>下载人数</p>

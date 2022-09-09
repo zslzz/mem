@@ -14,6 +14,7 @@
     <Divider>测试登录</Divider>
     <Row>
       <DescriptionList :title="'不同用户登录'" :col="1">
+        <Description term="">使用<router-link to="/login">admin/123456</router-link>登录</Description>
         <Description term="">使用<router-link to="/login">expert/123456</router-link>登录</Description>
         <Description term="">使用<router-link to="/login">normal/123456</router-link>登录</Description>
       </DescriptionList>

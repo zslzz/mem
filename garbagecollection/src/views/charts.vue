@@ -31,7 +31,7 @@ export default {
           // 指定图表的配置项和数据
           let option = {
             title: {
-              text: "城市分布",
+              text: "合作伙伴分布",
               textStyle: {
                 fontSize: 16,
                 fontWeight: "normal",
@@ -70,7 +70,7 @@ export default {
             ],
             yAxis: [
               {
-                name: "单位（套）",
+                name: "单位（个）",
                 nameTextStyle: {
                   align: "left",
                   verticalAlign: "top",
@@ -84,7 +84,7 @@ export default {
                 name: "套",
                 type: "bar",
                 barWidth: "60%",
-                data: [10, 52, 200, 334, 390, 330, 220],
+                data: [334, 52, 200, 300, 390, 330, 220],
                 itemStyle: { normal: { color: "#2C6D9D" } },
               },
             ],

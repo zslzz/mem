@@ -125,7 +125,7 @@ export default {
       <Col span="6" class="header-title">
       <Icon @click="collapsedSider" :class="rotateIcon" type="md-menu" size="30">
       </Icon>
-      <div class="header-logo">餐厨垃圾处理系统</div>
+      <div class="header-logo">只此清绿-餐厨垃圾处理系统</div>
       </Col>
 
       <Col span="18" class="header-menu">
@@ -144,7 +144,7 @@ export default {
         <img class="header-photo" src="../images/tx.jpg">
         <Dropdown>
           <a href="javascript:void(0)">
-            expert
+            user
             <Icon type="md-arrow-dropdown" size="20" />
           </a>
           <template #list>
@@ -163,6 +163,7 @@ export default {
 <style lang="less" scoped>
 .header {
   padding: 0;
+  background: #122e12a3
 }
 
 .header-logo {

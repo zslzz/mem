@@ -26,6 +26,14 @@ export const menuList1 = [
         title: "系统介绍",
     },
     {
+        id: "M0003",
+        icon: "md-bookmark",
+        path: "/tabs",
+        name: "DemoTabs",
+        componentPath: "tabs.vue",
+        title: "资料卡片",
+    },
+    {
         id: "M0002",
         icon: "md-grid",
         //path: "/table",
@@ -66,6 +74,110 @@ export const menuList1 = [
                 title: "最稳定报告",
             },
         ],
+    },   
+    {
+        id: "M0010",
+        icon: "ios-speedometer",
+        path: "/charts",
+        name: "DemoEharts",
+        componentPath: "charts.vue",
+        title: "数据分析",
+    },
+    {
+        id: "M0003",
+        icon: "md-bookmark",
+        path: "/attachment",
+        name: "attachment",
+        componentPath: "attachment.vue",
+        title: "附录清单",
+    },
+    {
+        id: "M0012",
+        icon: "md-warning",
+        title: "权限处理",
+        children: [
+            {
+                id: "M0013",
+                path: "/permission",
+                name: "DemoPermission",
+                componentPath: "permission.vue",
+                title: "权限测试",
+            },
+            {
+                id: "M0014",
+                path: "/404",
+                name: "DemoError404",
+                componentPath: "error404.vue",
+                title: "404页面",
+            },
+        ],
+    },
+    {
+        id: "M0015",
+        icon: "md-body",
+        path: "/contactus",
+        name: "ContactUs",
+        componentPath: "contactUs.vue",
+        title: "联系我们",
+    },
+];
+
+export const menuList2 = [
+    {
+        id: "M0001",
+        icon: "md-home",
+        path: "/home",
+        name: "DemoHome",
+        componentPath: "home.vue",
+        title: "系统首页",
+    },
+    {
+        id: "M0012",
+        icon: "md-warning",
+        title: "权限处理",
+        children: [
+            {
+                id: "M0013",
+                path: "/permission",
+                name: "DemoPermission",
+                componentPath: "permission.vue",
+                title: "权限测试",
+            },
+            {
+                id: "M0014",
+                path: "/404",
+                name: "DemoError404",
+                componentPath: "error404.vue",
+                title: "404页面",
+            },
+        ],
+    },
+    {
+        id: "M0015",
+        icon: "md-body",
+        path: "/contactus",
+        name: "ContactUs",
+        componentPath: "contactUs.vue",
+        title: "联系我们",
+    },
+];
+
+export const menuList3 = [
+    {
+        id: "M0001",
+        icon: "md-home",
+        path: "/home",
+        name: "DemoHome",
+        componentPath: "home.vue",
+        title: "系统首页",
+    },
+    {
+        id: "M0020",
+        icon: "md-git-compare",
+        path: "/bpmn",
+        name: "DemoBpmn",
+        componentPath: "bpmn.vue",
+        title: "系统介绍",
     },
     {
         id: "M0003",
@@ -112,27 +224,6 @@ export const menuList1 = [
         title: "数据分析",
     },
     {
-        id: "M0012",
-        icon: "md-warning",
-        title: "权限处理",
-        children: [
-            {
-                id: "M0013",
-                path: "/permission",
-                name: "DemoPermission",
-                componentPath: "permission.vue",
-                title: "权限测试",
-            },
-            {
-                id: "M0014",
-                path: "/404",
-                name: "DemoError404",
-                componentPath: "error404.vue",
-                title: "404页面",
-            },
-        ],
-    },
-    {
         id: "M0003",
         icon: "md-bookmark",
         path: "/attachment",
@@ -141,25 +232,6 @@ export const menuList1 = [
         title: "附录清单",
     },
     {
-        id: "M0015",
-        icon: "md-body",
-        path: "/contactus",
-        name: "ContactUs",
-        componentPath: "contactUs.vue",
-        title: "联系我们",
-    },
-];
-
-export const menuList2 = [
-    {
-        id: "M0001",
-        icon: "md-home",
-        path: "/home",
-        name: "DemoHome",
-        componentPath: "home.vue",
-        title: "系统首页",
-    },
-    {
         id: "M0012",
         icon: "md-warning",
         title: "权限处理",
@@ -183,9 +255,9 @@ export const menuList2 = [
     {
         id: "M0015",
         icon: "md-body",
-        path: "/donate",
-        name: "DemoDonate",
-        componentPath: "donate.vue",
+        path: "/contactus",
+        name: "ContactUs",
+        componentPath: "contactUs.vue",
         title: "联系我们",
     },
 ];

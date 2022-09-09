@@ -1,7 +1,7 @@
 import type { Menu } from '@/data/menuList';
 import { loadMenuRouter } from '@/router/loadMenuRouter';
 import { defineStore } from 'pinia';
-import { menuList1, menuList2 } from '../data/menuList';
+import { menuList1, menuList2,menuList3 } from '../data/menuList';
 import router from '../router';
 
 interface Tag {
@@ -53,7 +53,7 @@ export const userStore = defineStore({
       sessionStorage.setItem("store_menuList", JSON.stringify(this.menuList));
     },
     loadMenu() {
-      let list = this.loginUser == "expert" ? menuList1 : menuList2;
+      let list = this.loginUser == "expert" ? menuList1 : (this.loginUser=="admin"?menuList3: menuList2);
       this.clearAllTags();
       this.setMenuList(list);
       loadMenuRouter(router, list);
