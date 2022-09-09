@@ -206,13 +206,13 @@ export const menuList3 = [
                 componentPath: "upload.vue",
                 title: "文件导入",
             },
-            {
-                id: "M0025",
-                path: "/print",
-                name: "DemoPrint",
-                componentPath: "print.vue",
-                title: "打印",
-            },
+            // {
+            //     id: "M0025",
+            //     path: "/print",
+            //     name: "DemoPrint",
+            //     componentPath: "print.vue",
+            //     title: "打印",
+            // },
         ],
     },    
     {
@@ -222,14 +222,6 @@ export const menuList3 = [
         name: "DemoEharts",
         componentPath: "charts.vue",
         title: "数据分析",
-    },
-    {
-        id: "M0003",
-        icon: "md-bookmark",
-        path: "/attachment",
-        name: "attachment",
-        componentPath: "attachment.vue",
-        title: "附录清单",
     },
     {
         id: "M0012",
