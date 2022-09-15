@@ -424,16 +424,16 @@ export const tableDataList: Array<TableData> = [
     {
         name: '最佳性价比',
         ability: 50,
-        budget: 700,
+        budget: 1600,
     },
     {
         name: '最实惠',
         ability: 50,
-        budget: 600,
+        budget: 1500,
     },
     {
         name: '最稳定',
         ability: 50,
-        budget: 900,
+        budget: 1700,
     },
 ];

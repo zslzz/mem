@@ -13,7 +13,7 @@
       <Row>
         <Col span="5">
         <FormItem label="预算(w)" prop="budget">
-          <Input type="text" v-model="formInline.budget" placeholder="700"> </Input>
+          <Input type="text" v-model="formInline.budget" placeholder="1500"> </Input>
         </FormItem>
         </Col>
 
@@ -28,10 +28,15 @@
           <Button type="primary" @click="handleSearch()">搜索</Button>
         </FormItem>
         </Col>
+        <Col span="6">
+        <FormItem>
+          <Button type="primary" @click="showHiddenFun()">展示/隐藏 所有</Button>
+        </FormItem>
+        </Col>
       </Row>
     </Form>
 
-    <Table border ref="selection" :columns="columns" :data="dataList">
+    <Table border ref="selection" :columns="columns" :data="dataList" v-show="isShow">
       <template #name="{ row }">
         <strong>{{ row.name }}</strong>
       </template>
@@ -48,35 +53,17 @@
 
 <script lang="ts">
 import { Message } from 'view-ui-plus'
-import { reactive, ref } from 'vue';
+import { reactive, ref,onMounted } from 'vue';
 import { tableDataList } from '../data/tableList';
 
 export default {
   name: "DemoTable",
   setup() {
-    const columns = [{
-      type: 'selection',
-      width: 60,
-      align: 'center'
-    },
-    {
-      title: '报告名称',
-      key: 'name'
-    },
-    {
-      title: '处理量(t)',
-      key: 'ability'
-    },
-    {
-      title: '预算(w)',
-      key: 'budget'
-    },
-    {
-      title: 'Action',
-      slot: 'action',
-      width: 150,
-      align: 'center'
-    }];
+    const columns = [{type: 'selection',width: 60,align: 'center'},
+    {title: '报告名称',key: 'name'},
+    {title: '处理量(t)',key: 'ability'},
+    {title: '预算(w)',key: 'budget'},
+    {title: 'Action',slot: 'action',width: 150,align: 'center'}];
     let dataList = ref([...tableDataList]);
 
     let formInline = reactive({
@@ -101,8 +88,14 @@ export default {
     const remove = (index: number) => {
       dataList.value.splice(index, 1);
     }
+    
+    let isShow = ref(false)
+    const showHiddenFun = () => {
+      isShow.value=!isShow.value
+    };
     const handleSearch = () => {
       dataList.value = tableDataList.filter((item) => {
+        isShow.value=true
         if (formInline.budget != '' && item.budget != Number(formInline.budget)) {
           return;
         }
@@ -113,10 +106,12 @@ export default {
       });
     }
 
+   
     return {
+      isShow,
       columns,
       dataList,
-      show,
+      showHiddenFun,
       remove,
       selection,
       formInline,
