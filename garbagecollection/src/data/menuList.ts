@@ -34,12 +34,20 @@ export const menuList1 = [
         title: "资料卡片",
     },
     {
+        id: "M0021",
+        icon: "md-bookmark",
+        path: "/devices",
+        name: "DeviceList",
+        componentPath: "deviceList.vue",
+        title: "所有设备",
+    },
+    {
         id: "M0002",
         icon: "md-grid",
         //path: "/table",
         //name: "DemoTable",
         //componentPath: "table.vue",
-        title: "设备报告",
+        title: "专家推荐",
         children: [
             {
                 id: "M0005",
@@ -84,7 +92,7 @@ export const menuList1 = [
         title: "数据分析",
     },
     {
-        id: "M0003",
+        id: "M0011",
         icon: "md-bookmark",
         path: "/attachment",
         name: "attachment",
@@ -188,12 +196,20 @@ export const menuList3 = [
         title: "资料卡片",
     },
     {
+        id: "M0021",
+        icon: "md-bookmark",
+        path: "/devices",
+        name: "DeviceList",
+        componentPath: "deviceList.vue",
+        title: "所有设备",
+    },
+    {
         id: "M0002",
         icon: "md-grid",
         //path: "/table",
         //name: "DemoTable",
         //componentPath: "table.vue",
-        title: "设备报告",
+        title: "专家推荐",
         children: [
             {
                 id: "M0005",

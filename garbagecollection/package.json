@@ -16,6 +16,7 @@
     "@braks/vue-flow": "^0.4.37",
     "@wangeditor/editor": "^5.1.1",
     "@wangeditor/editor-for-vue": "^5.1.12",
+    "axios": "^0.27.2",
     "echarts": "^5.3.3",
     "pinia": "^2.0.14",
     "screenfull": "^6.0.2",

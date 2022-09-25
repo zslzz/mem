@@ -19,8 +19,7 @@
         <strong>{{ row.name }}</strong>
         </template>
         <template #action="{ row, index }">
-          <Button type="primary" size="small" style="margin-right: 5px" @click="show(row)">查看</Button>
-          <Button type="error" size="small" @click="remove(index)">删除</Button>
+          <Button type="primary" size="small" style="margin-right: 5px" @click="show(row)">详情</Button>
         </template>
       </Table>
       </div>
@@ -53,11 +52,7 @@
     //  
      },
     setup() {
-      const columns = [{
-        type: 'selection',
-        width: 60,
-        align: 'center'
-      },
+      const columns = [
       {
         title: '设备名称',
         key: 'device'

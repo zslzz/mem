@@ -55,11 +55,12 @@
 import { Message } from 'view-ui-plus'
 import { reactive, ref,onMounted } from 'vue';
 import { tableDataList } from '../data/tableList';
+import axios from 'axios'
 
 export default {
   name: "DemoTable",
   setup() {
-    const columns = [{type: 'selection',width: 60,align: 'center'},
+    const columns = [
     {title: '报告名称',key: 'name'},
     {title: '处理量(t)',key: 'ability'},
     {title: '预算(w)',key: 'budget'},
@@ -92,7 +93,19 @@ export default {
     let isShow = ref(false)
     const showHiddenFun = () => {
       isShow.value=!isShow.value
+  
+      var url = '/test/info' 
+      url = '/api/all'
+      axios.get(url)
+        .then(response => {
+          //   this. = response.data;
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     };
+
     const handleSearch = () => {
       dataList.value = tableDataList.filter((item) => {
         isShow.value=true
