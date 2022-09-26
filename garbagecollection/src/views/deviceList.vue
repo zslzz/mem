@@ -9,7 +9,7 @@
 <template>
   <div>
     <div id="printMe" class="print-area">
-      <Form ref="form" :model="formInline" :rules="ruleInline" :label-width="90">
+      <Form ref="form" :model="formInline" :rules="ruleInline" :label-width="100">
       <Row>
         <Col span="5">
         <FormItem label="名称" prop="name">
@@ -17,7 +17,7 @@
         </FormItem>
         </Col>
 
-        <Col span="5">
+        <Col span="4">
         <FormItem label="价格（万元）" prop="value">
           <Input type="text" v-model="formInline.value" placeholder="40"></Input>
         </FormItem>
@@ -79,7 +79,8 @@ export default {
     },
     {
       title: '厂家',
-      key: '厂家'
+      key: '厂家',
+      width: 250,
     },
     {
       title: 'Action',

@@ -4,6 +4,7 @@
 </style>
 <template>
   <div>
+    nnn
     <Tabs value="name1">
       <TabPane :label="label" name="baseInfo">
           主要显示各子系统的设备参数等

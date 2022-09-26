@@ -34,6 +34,14 @@ export const menuList1 = [
         title: "资料卡片",
     },
     {
+        id: "M0003",
+        icon: "md-bookmark",
+        path: "/personal",
+        name: "personResult",
+        componentPath: "personResult.vue",
+        title: "个人定制",
+    },
+    {
         id: "M0021",
         icon: "md-bookmark",
         path: "/devices",
