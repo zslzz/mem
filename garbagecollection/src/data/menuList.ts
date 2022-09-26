@@ -34,8 +34,8 @@ export const menuList1 = [
         title: "资料卡片",
     },
     {
-        id: "M0003",
-        icon: "md-bookmark",
+        id: "M0022",
+        icon: "md-paw",
         path: "/personal",
         name: "personResult",
         componentPath: "personResult.vue",
@@ -43,7 +43,7 @@ export const menuList1 = [
     },
     {
         id: "M0021",
-        icon: "md-bookmark",
+        icon: "md-book",
         path: "/devices",
         name: "DeviceList",
         componentPath: "deviceList.vue",
