@@ -191,4 +191,4 @@ def cal(S):
 
 def calresult(S):
     return pd.concat(cal(S))
-# print(pd.concat(cal(210))[['装置','材质','厂家','参数','数量','总能力','总价','得分']])
+print(pd.concat(cal(220))[['装置','材质','厂家','参数','数量','总能力','总价','得分']])

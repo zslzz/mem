@@ -49,9 +49,10 @@ def cal(S):
     rs1.append(df1[0][(df1[0]['总价'] >= S*0.6*0.75) & (df1[0]['总价'] <= S*0.6*1.25)])
     rs1[0]['得分'] = rs1[0]['总价'].apply(lambda x:5 if x<=S*0.6 else 5.0- ((x-S*0.6)/(S*0.6) * 4)*5.0)
 
-    v1.append(rs1[0][rs1[0]['总价']==rs1[0]['总价'].min()].iloc[[0]])
-    v2.append(rs1[0][rs1[0]['总能力']==rs1[0]['总能力'].max()].iloc[[0]])
-    v3.append(rs1[0][rs1[0]['得分']==rs1[0]['得分'].max()].iloc[[0]])
+    if rs1[0].empty is False:       
+        v1.append(rs1[0][rs1[0]['总价']==rs1[0]['总价'].min()].iloc[[0]])
+        v2.append(rs1[0][rs1[0]['总能力']==rs1[0]['总能力'].max()].iloc[[0]])
+        v3.append(rs1[0][rs1[0]['得分']==rs1[0]['得分'].max()].iloc[[0]])
 
     df1[1]['数量'] = (S/8)/df1[1]['参数值']
     df1[1]['数量'] = df1[1]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -119,9 +120,10 @@ def cal(S):
     rs2.append(df2[3][(df2[3]['总价'] >= S*0.9*0.75) & (df2[3]['总价'] <= S*0.9*1.25)])
     rs2[0]['得分'] = rs2[0]['总价'].apply(lambda x:10 if x<=S*0.9 else 10.0- ((x-S*0.9)/(S*0.9) * 4)*10.0)
 
-    v1.append(rs2[0][rs2[0]['总价']==rs2[0]['总价'].min()].iloc[[0]])
-    v2.append(rs2[0][rs2[0]['总能力']==rs2[0]['总能力'].max()].iloc[[0]])
-    v3.append(rs2[0][rs2[0]['得分']==rs2[0]['得分'].max()].iloc[[0]])
+    if rs2[0].empty is False:   
+        v1.append(rs2[0][rs2[0]['总价']==rs2[0]['总价'].min()].iloc[[0]])
+        v2.append(rs2[0][rs2[0]['总能力']==rs2[0]['总能力'].max()].iloc[[0]])
+        v3.append(rs2[0][rs2[0]['得分']==rs2[0]['得分'].max()].iloc[[0]])
 
     df2[4]['数量'] = (S/8)/df2[4]['参数值']
     df2[4]['数量'] = df2[4]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -130,9 +132,10 @@ def cal(S):
     rs2.append(df2[4][(df2[4]['总价'] >= S*0.3*0.75) & (df2[4]['总价'] <= S*0.3*1.25)])
     rs2[1]['得分'] = rs2[1]['总价'].apply(lambda x:5 if x<=S*0.3 else 5- ((x-S*0.3)/(S*0.3) * 4)*5.0)
 
-    v1.append(rs2[1][rs2[1]['总价']==rs2[1]['总价'].min()].iloc[[0]])
-    v2.append(rs2[1][rs2[1]['总能力']==rs2[1]['总能力'].max()].iloc[[0]])
-    v3.append(rs2[1][rs2[1]['得分']==rs2[1]['得分'].max()].iloc[[0]])
+    if rs1[1].empty is False:   
+        v1.append(rs2[1][rs2[1]['总价']==rs2[1]['总价'].min()].iloc[[0]])
+        v2.append(rs2[1][rs2[1]['总能力']==rs2[1]['总能力'].max()].iloc[[0]])
+        v3.append(rs2[1][rs2[1]['得分']==rs2[1]['得分'].max()].iloc[[0]])
 
     df2[5]['数量'] = (S/8)/df2[5]['参数值']
     df2[5]['数量'] = df2[5]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -144,9 +147,10 @@ def cal(S):
     rs2[2]['得分'] = rs2[2]['总价'].apply(lambda x:10 if x+plusva<=S*1.15 else 10- ((x+plusva-S*1.15)/(S*1.15) * 4)*10.0)
     rs2[2].loc[24] = df2[5].loc[24]
 
-    v1.append(rs2[2][rs2[2]['总价']==rs2[2]['总价'].min()].iloc[[0]])
-    v2.append(rs2[2][rs2[2]['总能力']==rs2[2]['总能力'].max()].iloc[[0]])
-    v3.append(rs2[2][rs2[2]['得分']==rs2[2]['得分'].max()].iloc[[0]])
+    if rs2[2].empty is False:   
+        v1.append(rs2[2][rs2[2]['总价']==rs2[2]['总价'].min()].iloc[[0]])
+        v2.append(rs2[2][rs2[2]['总能力']==rs2[2]['总能力'].max()].iloc[[0]])
+        v3.append(rs2[2][rs2[2]['得分']==rs2[2]['得分'].max()].iloc[[0]])
 
     df2[6]['数量'] = (S/8)/df2[6]['参数值']
     df2[6]['数量'] = df2[6]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -191,9 +195,10 @@ def cal(S):
     rs3.append(df3[9][(df3[9]['总价'] >= S*0.1*0.75) & (df3[9]['总价'] <= S*0.1*1.25)])
     rs3[2]['得分'] = rs3[2]['总价'].apply(lambda x:5 if x<=S*0.1 else 5- ((x-S*0.1)/(S*0.1) * 4)*5.0)
 
-    v1.append(rs3[2][rs3[2]['总价']==rs3[2]['总价'].min()].iloc[[0]])
-    v2.append(rs3[2][rs3[2]['总能力']==rs3[2]['总能力'].max()].iloc[[0]])
-    v3.append(rs3[2][rs3[2]['得分']==rs3[2]['得分'].max()].iloc[[0]])
+    if rs3[2].empty is False:   
+        v1.append(rs3[2][rs3[2]['总价']==rs3[2]['总价'].min()].iloc[[0]])
+        v2.append(rs3[2][rs3[2]['总能力']==rs3[2]['总能力'].max()].iloc[[0]])
+        v3.append(rs3[2][rs3[2]['得分']==rs3[2]['得分'].max()].iloc[[0]])
 
     df4[10]['参数值'] = df4[10]['参数'].apply(lambda x:float(x[:2]))
     df4[11]['参数值'] = df4[11]['参数'].apply(lambda x:int(x[:-4]))
@@ -211,9 +216,10 @@ def cal(S):
     rs4.append(df4[10][(df4[10]['总价'] >= S*0.5*0.75) & (df4[10]['总价'] <= S*0.5*1.25)])
     rs4[0]['得分'] = rs4[0]['总价'].apply(lambda x:5 if x<=S*0.5 else 5.0- ((x-S*0.5)/(S*0.5) * 4)*5.0)
 
-    v1.append(rs4[0][rs4[0]['总价']==rs4[0]['总价'].min()].iloc[[0]])
-    v2.append(rs4[0][rs4[0]['总能力']==rs4[0]['总能力'].max()].iloc[[0]])
-    v3.append(rs4[0][rs4[0]['得分']==rs4[0]['得分'].max()].iloc[[0]])
+    if rs4[0].empty is False:  
+        v1.append(rs4[0][rs4[0]['总价']==rs4[0]['总价'].min()].iloc[[0]])
+        v2.append(rs4[0][rs4[0]['总能力']==rs4[0]['总能力'].max()].iloc[[0]])
+        v3.append(rs4[0][rs4[0]['得分']==rs4[0]['得分'].max()].iloc[[0]])
 
     df4[11]['数量'] = (S/8)/df4[11]['参数值']
     df4[11]['数量'] = df4[11]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -222,8 +228,8 @@ def cal(S):
     tempdf411 = df4[11][df4[11]['备注']==1]
     plusva = np.min(df4[11][df4[11]['备注']==2]['总价'])
     rs4.append(tempdf411[(tempdf411['总价'] + plusva >= S*0.75) & (tempdf411['总价'] + plusva <= S*1.25)])
-    rs4[1]['得分'] = rs4[1]['总价'].apply(lambda x:10 if x+plusva<=S else 10- ((x+plusva-S)/(S) * 4)*10.0)
     rs4[1].loc[rs4[1].index.max()+1] = df4[11].loc[df4[11]['备注']==2].iloc[0]
+    rs4[1]['得分'] = rs4[1]['总价'].apply(lambda x:10 if x+plusva<=S else 10- ((x+plusva-S)/(S) * 4)*10.0)
 
     v1.append(rs4[1][rs4[1]['总价']==rs4[1]['总价'].min()].iloc[[0]])
     v2.append(rs4[1][rs4[1]['总能力']==rs4[1]['总能力'].max()].iloc[[0]])
@@ -237,9 +243,10 @@ def cal(S):
     rs4.append(df4[12][(df4[12]['总价'] >= S*para*0.75) & (df4[12]['总价'] <= S*para*1.25)])
     rs4[2]['得分'] = rs4[2]['总价'].apply(lambda x:3 if x<=S*para else 3.0- ((x-S*para)/(S*para) * 4)*3.0)
 
-    v1.append(rs4[2][rs4[2]['总价']==rs4[2]['总价'].min()].iloc[[0]])
-    v2.append(rs4[2][rs4[2]['总能力']==rs4[2]['总能力'].max()].iloc[[0]])
-    v3.append(rs4[2][rs4[2]['得分']==rs4[2]['得分'].max()].iloc[[0]])
+    if rs4[2].empty is False:     
+        v1.append(rs4[2][rs4[2]['总价']==rs4[2]['总价'].min()].iloc[[0]])
+        v2.append(rs4[2][rs4[2]['总能力']==rs4[2]['总能力'].max()].iloc[[0]])
+        v3.append(rs4[2][rs4[2]['得分']==rs4[2]['得分'].max()].iloc[[0]])
 
     df4[13]['数量'] = (S/8)/df4[13]['参数值']
     df4[13]['数量'] = df4[13]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -249,9 +256,10 @@ def cal(S):
     rs4.append(df4[13][(df4[13]['总价'] >= S*para*0.75) & (df4[13]['总价'] <= S*para*1.25)])
     rs4[3]['得分'] = rs4[3]['总价'].apply(lambda x:2 if x<=S*para else 2.0- ((x-S*para)/(S*para) * 4)*2.0)
 
-    v1.append(rs4[3][rs4[3]['总价']==rs4[3]['总价'].min()].iloc[[0]])
-    v2.append(rs4[3][rs4[3]['总能力']==rs4[3]['总能力'].max()].iloc[[0]])
-    v3.append(rs4[3][rs4[3]['得分']==rs4[3]['得分'].max()].iloc[[0]])
+    if rs4[3].empty is False: 
+        v1.append(rs4[3][rs4[3]['总价']==rs4[3]['总价'].min()].iloc[[0]])
+        v2.append(rs4[3][rs4[3]['总能力']==rs4[3]['总能力'].max()].iloc[[0]])
+        v3.append(rs4[3][rs4[3]['得分']==rs4[3]['得分'].max()].iloc[[0]])
 
     df4[14]['数量'] = (S/2)/df4[14]['参数值']
     df4[14]['数量'] = df4[14]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -263,9 +271,10 @@ def cal(S):
     rs4[4]['得分'] = rs4[4]['总价'].apply(lambda x:5 if x+plusva<=S*0.5 else 5- ((x+plusva-S*0.5)/(S*0.5) * 4)*5.0)
     rs4[4].loc[rs4[4].index.max()+1] = df4[14].loc[df4[14]['备注']==2].iloc[0]
 
-    v1.append(rs4[4][rs4[4]['总价']==rs4[4]['总价'].min()].iloc[[0]])
-    v2.append(rs4[4][rs4[4]['总能力']==rs4[4]['总能力'].max()].iloc[[0]])
-    v3.append(rs4[4][rs4[4]['得分']==rs4[4]['得分'].max()].iloc[[0]])
+    if rs4[4].empty is False: 
+        v1.append(rs4[4][rs4[4]['总价']==rs4[4]['总价'].min()].iloc[[0]])
+        v2.append(rs4[4][rs4[4]['总能力']==rs4[4]['总能力'].max()].iloc[[0]])
+        v3.append(rs4[4][rs4[4]['得分']==rs4[4]['得分'].max()].iloc[[0]])
 
     df4[15]['数量'] = (S/8)/df4[15]['参数值']
     df4[15]['数量'] = df4[15]['数量'].apply(lambda x:math.ceil(x) if not pd.isna(x) else x)
@@ -274,9 +283,10 @@ def cal(S):
     rs4.append(df4[15][(df4[15]['总价'] >= S*0.5*0.75) & (df4[15]['总价'] <= S*0.5*1.25)])
     rs4[5]['得分'] = rs4[5]['总价'].apply(lambda x:5 if x<=S*0.5 else 5.0- ((x-S*0.5)/(S*0.5) * 4)*5.0)
 
-    v1.append(rs4[5][rs4[5]['总价']==rs4[5]['总价'].min()].iloc[[0]])
-    v2.append(rs4[5][rs4[5]['总能力']==rs4[5]['总能力'].max()].iloc[[0]])
-    v3.append(rs4[5][rs4[5]['得分']==rs4[5]['得分'].max()].iloc[[0]])
+    if rs4[5].empty is False: 
+        v1.append(rs4[5][rs4[5]['总价']==rs4[5]['总价'].min()].iloc[[0]])
+        v2.append(rs4[5][rs4[5]['总能力']==rs4[5]['总能力'].max()].iloc[[0]])
+        v3.append(rs4[5][rs4[5]['得分']==rs4[5]['得分'].max()].iloc[[0]])
 
     return rs1+rs2+rs3+rs4,v1,v2,v3
 

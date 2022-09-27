@@ -5,11 +5,11 @@
 </style>
 <template>
     <div>
-        <Form ref="form" :model="formInline" :rules="ruleInline" :label-width="100">
+        <Form ref="form" :model="formInline" :rules="ruleInline" :label-width="200">
             <Row>
                 <Col span="5">
-                <FormItem label="处理吨数" prop="ability">
-                    <Input type="text" v-model="formInline.ability" placeholder="165-210"> </Input>
+                <FormItem label="处理吨数（建议 >100吨）" prop="ability">
+                    <Input type="text" v-model="formInline.ability" placeholder="210"></Input>
                 </FormItem>
                 </Col>
                 <Col span="6">
@@ -107,6 +107,9 @@ export default {
         }
 
         const handleSearch = () => {
+            // v1.value=[]
+            // v2.value=[]
+            // v3.value=[]
             console.log("ability:" + formInline.ability)
             let ability= formInline.ability==''?"210":formInline.ability
             var url1 = `/api/score/${ability}/`
